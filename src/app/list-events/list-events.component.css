@@ -1,0 +1,52 @@
+/* h2, h3 {
+  text-align: center;
+} */
+
+h2 {
+  /*padding-top: 20px; */
+  font-size: 28px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500;
+}
+
+.background-img {
+  background-image: url(/src/assets/images/concert-2.jpg);
+  background-color: white;
+  background-size: cover;
+  position: sticky; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+  max-width: fit-content;
+  max-height: fit-content;
+  color: white;
+  text-shadow: 2px 2px 5px black, 0 0 25px darkred, 0 0 5px black;
+}
+
+a {
+  color : white;
+  text-decoration: none;
+  text-shadow: 2px 2px 5px black, 0 0 25px darkred, 0 0 5px black;
+}
+
+.btn {
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px white solid;
+}
+
+.row {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
+}
+
+#list {
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.eventTitle {
+  font-size: 1.5em;
+}

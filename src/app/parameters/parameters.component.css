@@ -1,0 +1,64 @@
+.background-img {
+  background-image: url('../../assets/images/concert-2.jpg');
+  background-color: white;
+  background-size: cover;
+  position: sticky; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* input {
+ margin-top: 20px;
+} */
+
+.btn {
+  text-align: center;
+  color: white;
+  border: 1px grey solid;
+  text-shadow: 2px 2px 5px black, 0 0 25px darkred, 0 0 5px black;
+  box-shadow: 1px 1px 1px black, 0 0 3px black;
+  margin-top: 15px;
+}
+
+.container-fluid {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -40px 0 0 -40px;
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	border: 15px solid grey;
+	border-top-color: white;
+	animation: spin 1s infinite linear;
+}
+
+.isLoadingIcon {
+  margin-top: 100px;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#list {
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 20px;
+  padding: 5px;
+  color : white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-shadow: 2px 2px 5px black, 0 0 25px darkred, 0 0 5px black;
+}
+
+.noEventsMessage {
+  color : white;
+  text-shadow: 2px 2px 5px black, 0 0 25px darkred, 0 0 5px black;
+}
