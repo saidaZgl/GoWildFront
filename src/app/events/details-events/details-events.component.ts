@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OpenDataParisServices } from '../services/OpenDataParisServices';
+import { OpenDataParisServices } from '../../services/OpenDataParisServices';
 
 @Component({
   selector: 'app-details-events',

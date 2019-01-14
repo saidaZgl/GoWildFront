@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OpenDataParisServices } from '../services/OpenDataParisServices';
-import { MapServices } from '../services/map.services';
+import { OpenDataParisServices } from '../../services/OpenDataParisServices';
+import { MapServices } from '../../services/map.services';
 import * as L from 'leaflet';
 
 @Component({
