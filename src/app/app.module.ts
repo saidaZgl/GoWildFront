@@ -25,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'param', component: ParametersComponent },
   { path: 'events/:id', component: DetailsEventsComponent },
   { path: 'create', component: CreateEventComponent },
+  { path: 'modify', component: ModifyEventComponent },
   { path: '**', component: HomeComponent }
 ];
 
