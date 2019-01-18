@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { OpenDataParisServices } from '../../services/OpenDataParisServices';
 import { MapServices } from '../../services/map.services';
 import * as L from 'leaflet';
+import { EventsService } from '../../services/events.service';
 
 @Component({
   selector: 'app-map',
@@ -12,10 +13,12 @@ import * as L from 'leaflet';
 export class MapComponent implements OnInit {
   map: any;
   event: any;
+  gowildEvent: any;
   position: Position;
 
   constructor(private route: ActivatedRoute,
               private api: OpenDataParisServices,
+              private eventApi: EventsService,
               private gps: MapServices) {
     }
 
@@ -23,6 +26,7 @@ export class MapComponent implements OnInit {
     // recuperation of selected element
     const id = this.route.snapshot.params['id'];
     this.event = this.api.getEventById(id);
+    this.gowildEvent = this.eventApi.getEventById(id);
     // Déclaration de la carte avec les coordonnées du centre et le niveau de zoom.
     this.position = this.gps.position;
     const map = L.map('map').setView([this.position.coords.latitude, this.position.coords.longitude], 11);

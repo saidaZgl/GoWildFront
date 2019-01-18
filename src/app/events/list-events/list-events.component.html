@@ -6,6 +6,21 @@
     </button>
   </div>
   <div *ngIf="isLoaded" id="list">
+    <div *ngFor="let event of userEvents; let i = index">
+      <div class="row">
+        <div class="col-12 col-sm-3 col-md-2">
+          {{ event.date_start }}
+          {{ event.timetable }}
+        </div>
+        <div class="col-12 col-sm-5 col-md-7 eventTitle">
+          <a [routerLink]="[i]">{{ event.title }}</a>
+        </div>
+        <div class="col-12 col-sm-4 col-md-3">
+          {{ event.placename }}
+        </div>
+      </div>
+      <hr>
+    </div>
     <div *ngFor="let event of eventsSorted; let i = index">
       <div class="row">
         <div class="col-12 col-sm-3 col-md-2">
@@ -21,6 +36,7 @@
       </div>
       <hr>
     </div>
-    <br/><br/>
+
+    <br /><br />
   </div>
 </div>

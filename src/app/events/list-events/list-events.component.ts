@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenDataParisServices } from '../../services/OpenDataParisServices';
+import { EventsService } from '../../services/events.service';
 import { MapServices } from '../../services/map.services';
 
 @Component({
@@ -11,17 +12,30 @@ import { MapServices } from '../../services/map.services';
 export class ListEventsComponent implements OnInit {
   isLoaded = false;
   data: any;
+  apiData: any;
   events: [any];
+  records: any;
   eventsSorted: Array<any>;
+  userEvents: Array<any>;
   frDate: string;
 
-  constructor(private api: OpenDataParisServices, private gps: MapServices) {
+  constructor(private api: OpenDataParisServices, private gps: MapServices, private eventApi: EventsService) {
   }
 
   ngOnInit() {
     this.gps.findme();
     // formatage de la date
     this.frDate = frenchDate();
+
+    // api customBDD call
+    this.eventApi.getEvents().subscribe((response) => {
+      this.apiData = response;
+      this.isLoaded = true;
+      console.log(this.apiData);
+      this.userEvents = this.apiData;
+      this.eventApi.setFilteredArray(this.userEvents);
+    });
+
     // api OpenDataParis call
     this.api.getAll().subscribe((response) => {
       this.data = response;
