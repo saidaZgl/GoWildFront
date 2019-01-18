@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 
-export class GetServiceService {
+export class CommentService {
   URL = 'http://localhost:8080/api/comments';
 
   constructor(private http: HttpClient) { }

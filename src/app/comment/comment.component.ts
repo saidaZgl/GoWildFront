@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetServiceService } from '../services/get-service.service';
+import { CommentService } from '../services/comment.service';
 
 @Component({
   selector: 'app-comment',
@@ -11,7 +11,7 @@ export class CommentComponent implements OnInit {
   comments: any;
   isLoaded = false;
 
-  constructor( private api: GetServiceService ) {
+  constructor( private api: CommentService ) {
   }
 
   ngOnInit() {
