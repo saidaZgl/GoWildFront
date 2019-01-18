@@ -54,7 +54,7 @@ const frenchDate = (date = new Date()) => {
 const eventFormat = (event: any) => {
   // event.fields.timetable = event.fields.timetable.slice(11, 16);
   event.fields.timetable = event.fields.timetable.slice(11, 16);
-  console.log(event.fields.timetable);
+  // console.log(event.fields.timetable);
   return event;
 };
 
@@ -71,7 +71,7 @@ const eventSort = (eventsIn: [any]) => {
     tempHour = '24:00'; // 24:00
     // boucle sur la liste pour voir si un événement ne commence pas plus tôt
     for (let j = 0; j < eventsIn.length; j++) {
-      console.log(eventsIn[j].fields.title);
+      // console.log(eventsIn[j].fields.title);
       if (!alreadySort.includes(j) && eventsIn[j].fields.timetable <= tempHour) {
         tempHour = eventsIn[j].fields.timetable;
         index = j;
