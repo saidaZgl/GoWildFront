@@ -19,11 +19,13 @@ import { ModifyEventComponent } from './events/modify-event-page/modify-event.co
 import { EventFormComponent } from './events/event-form/event-form.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
 import { UserService } from './services/User.service';
+import { CommentComponent } from './comment/comment.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'events', component: ListEventsComponent },
+  { path: 'comment', component: CommentComponent },
   { path: 'param', component: ParametersComponent },
   { path: 'events/:id', component: DetailsEventsComponent },
   { path: 'create-event', component: CreateEventComponent },
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     CreateEventComponent,
     ModifyEventComponent,
     EventFormComponent,
-    UserInfosComponent
+    UserInfosComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
