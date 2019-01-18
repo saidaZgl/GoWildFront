@@ -3,7 +3,7 @@
     <a routerLink="/events" class="navbar-brand">Go Out, Go WILD !</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" (click)="toggleNavbar()" aria-controls="navbarNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button> 
+      </button>
 
     <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="navbarNav">
       <ul class="navbar-nav">
@@ -14,16 +14,21 @@
           <a routerLink="/events" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-calendar-o"></i> Evénements</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/create" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-edit"></i> Créer un événement</a>
+          <a routerLink="/create-event" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-edit"></i> Créer un événement</a>
         </li>
         <li class="nav-item">
-            <a routerLink="/modify" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-edit"></i> Modifier un événement</a>
+            <a routerLink="/modify-event" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-edit"></i> Modifier un événement</a>
         </li>
+
+        <li class="nav-item">
+            <a routerLink="/modify-user" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-edit"></i> Modifier un compte</a>
+        </li>
+
         <li class="nav-item">
           <a routerLink="/param" class="nav-link" (click)="toggleNavbar()"><i class="fa fa-cog"></i> Paramètres</a>
         </li>
       </ul>
     </div>
-  
+
   </div>
 </nav>

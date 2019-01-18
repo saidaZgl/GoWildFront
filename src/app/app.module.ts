@@ -17,6 +17,8 @@ import { MapServices } from './services/map.services';
 import { CreateEventComponent } from './events/create-event-page/create-event.component';
 import { ModifyEventComponent } from './events/modify-event-page/modify-event.component';
 import { EventFormComponent } from './events/event-form/event-form.component';
+import { UserInfosComponent } from './user-infos/user-infos.component';
+import { UserService } from './services/User.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full'},
@@ -24,8 +26,10 @@ const appRoutes: Routes = [
   { path: 'events', component: ListEventsComponent },
   { path: 'param', component: ParametersComponent },
   { path: 'events/:id', component: DetailsEventsComponent },
-  { path: 'create', component: CreateEventComponent },
-  { path: 'modify', component: ModifyEventComponent },
+  { path: 'create-event', component: CreateEventComponent },
+  { path: 'modify-event', component: ModifyEventComponent },
+  { path: 'create-user', component: UserInfosComponent},
+  { path: 'modify-user', component: UserInfosComponent},
   { path: '**', component: HomeComponent }
 ];
 
@@ -41,7 +45,8 @@ const appRoutes: Routes = [
     MapComponent,
     CreateEventComponent,
     ModifyEventComponent,
-    EventFormComponent
+    EventFormComponent,
+    UserInfosComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     OpenDataParisServices,
-    MapServices
+    MapServices,
+    UserService
   ],
   bootstrap: [AppComponent],
 })
