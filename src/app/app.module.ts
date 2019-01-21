@@ -17,7 +17,8 @@ import { MapServices } from './services/map.services';
 import { CreateEventComponent } from './events/create-event-page/create-event.component';
 import { ModifyEventComponent } from './events/modify-event-page/modify-event.component';
 import { EventFormComponent } from './events/event-form/event-form.component';
-import { CommentComponent } from './comment/comment.component';
+import { CommentComponent } from './comments/comment/comment.component';
+import { ListCommentsComponent } from './comments/list-comments/list-comments.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full'},
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     CreateEventComponent,
     ModifyEventComponent,
     EventFormComponent,
-    CommentComponent
+    CommentComponent,
+    ListCommentsComponent
   ],
   imports: [
     BrowserModule,

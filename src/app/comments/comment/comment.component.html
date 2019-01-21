@@ -1,0 +1,6 @@
+<div *ngIf="isLoaded" id="list">
+  <div class="p-1" *ngFor="let comment of comments;">
+    {{ comment.liky }} like(s) - {{ comment.content }}
+    <hr>
+  </div>
+</div>
