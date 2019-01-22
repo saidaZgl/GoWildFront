@@ -19,6 +19,7 @@ import { ModifyEventComponent } from './events/modify-event-page/modify-event.co
 import { EventFormComponent } from './events/event-form/event-form.component';
 import { CommentComponent } from './comments/comment/comment.component';
 import { ListCommentsComponent } from './comments/list-comments/list-comments.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full'},
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     OpenDataParisServices,

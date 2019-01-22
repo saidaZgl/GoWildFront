@@ -1,24 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { CommentService } from '../../services/comment.service';
+import { Component } from '@angular/core';
+import { Comment } from '../../class/comment';
 
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.css']
 })
-export class CommentComponent implements OnInit {
 
-  comments: any;
-  isLoaded = false;
+export class CommentComponent {
 
-  constructor( private api: CommentService ) {
-  }
+  commentModel = new Comment(1, 'Ceci est un commentaire sur un événement', 7);
 
-  ngOnInit() {
-    this.api.getComments().subscribe((response) => {
-      this.comments = response;
-      console.log(this.comments);
-      this.isLoaded = true;
-    });
-  }
 }
