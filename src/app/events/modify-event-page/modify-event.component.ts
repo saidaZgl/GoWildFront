@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService} from '../../services/User.service';
+
+
 
 @Component({
   selector: 'app-modify-event',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modify-event.component.css']
 })
 export class ModifyEventComponent implements OnInit {
-
-  constructor() { }
+  isLoaded = false;
+  data: any;
+  constructor(private api: UserService) {
+   }
 
   ngOnInit() {
+    this.api.getUser().subscribe((response) => {
+      this.data = response;
+      this.isLoaded = true;
+    });
   }
 
 }

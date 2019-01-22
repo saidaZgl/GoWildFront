@@ -38,20 +38,20 @@ export class ListEventsComponent implements OnInit {
 
     // api OpenDataParis call
     this.api.getAll().subscribe((response) => {
-      this.data = response;
+    this.data = response;
       // Flag for the ngIf in the HTML
-      this.isLoaded = true;
+    this.isLoaded = true;
       // format timetable field
-      this.events = this.data.records.map(eventFormat);
+    this.events = this.data.records.map(eventFormat);
       // sort events list
-      this.eventsSorted = eventSort(this.events);
-      this.api.setFilteredArray(this.eventsSorted);
+    this.eventsSorted = eventSort(this.events);
+    this.api.setFilteredArray(this.eventsSorted);
     });
   }
 }
 
 // display a date in the french format
-const frenchDate = (date = new Date()) => {
+  const frenchDate = (date = new Date()) => {
   const weekDay = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
   const month   = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet',
                    'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
@@ -65,7 +65,7 @@ const frenchDate = (date = new Date()) => {
 };
 
 // cast the hour of the event
-const eventFormat = (event: any) => {
+  const eventFormat = (event: any) => {
   // event.fields.timetable = event.fields.timetable.slice(11, 16);
   event.fields.timetable = event.fields.timetable.slice(11, 16);
   // console.log(event.fields.timetable);
@@ -73,7 +73,7 @@ const eventFormat = (event: any) => {
 };
 
 // sort the list of events by started hour
-const eventSort = (eventsIn: [any]) => {
+  const eventSort = (eventsIn: [any]) => {
 
   const eventsOut: Array<any> = [];      // sorted array
   const alreadySort: Array<number> = []; // array of index of event already sorted

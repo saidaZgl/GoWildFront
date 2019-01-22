@@ -20,6 +20,8 @@ import { EventFormComponent } from './events/event-form/event-form.component';
 import { CommentComponent } from './comments/comment/comment.component';
 import { ListCommentsComponent } from './comments/list-comments/list-comments.component';
 import { FormsModule } from '@angular/forms';
+import { UserInfosComponent } from './user-infos/user-infos.component';
+import { UserService } from './services/User.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full'},
@@ -28,8 +30,10 @@ const appRoutes: Routes = [
   { path: 'comment', component: CommentComponent },
   { path: 'param', component: ParametersComponent },
   { path: 'events/:id', component: DetailsEventsComponent },
-  { path: 'create', component: CreateEventComponent },
-  { path: 'modify', component: ModifyEventComponent },
+  { path: 'create-event', component: CreateEventComponent },
+  { path: 'modify-event', component: ModifyEventComponent },
+  { path: 'create-user', component: UserInfosComponent},
+  { path: 'modify-user', component: UserInfosComponent},
   { path: '**', component: HomeComponent }
 ];
 
@@ -47,7 +51,8 @@ const appRoutes: Routes = [
     ModifyEventComponent,
     EventFormComponent,
     CommentComponent,
-    ListCommentsComponent
+    ListCommentsComponent,
+    UserInfosComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     OpenDataParisServices,
-    MapServices
+    MapServices,
+    UserService
   ],
   bootstrap: [AppComponent],
 })
