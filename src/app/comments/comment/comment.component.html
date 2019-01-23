@@ -1,23 +1,23 @@
-<div class="container-fluid">
-  <form #commentForm="ngForm">
+<div  *ngIf="isLoaded" class="container-fluid">
+  <form #commentForm="ngForm" (ngSubmit)="onCreate()">
 
     <div>
         <hr />
-        Id du commentaire : {{ commentModel.id }}
+        Id du commentaire : {{ comment.id }}
         <hr />
     </div>
 
     <div class="form-group">
       <label>Commentaire sur l'événement</label>
-      <textarea #content="ngModel" [class.is-invalid]="content.invalid && content.touched" required class="form-control" name="content" [(ngModel)]="commentModel.content" type="text"></textarea>
+      <textarea #content="ngModel" [class.is-invalid]="content.invalid && content.touched" required class="form-control" name="content" [(ngModel)]="comment.content" type="text"></textarea>
       <small class="text-danger" [class.d-none]="content.valid || content.untouched" >Un commentaire vide n'est pas autorisé</small>
     </div>
     
-    Nombre de like : {{ commentModel.liky }}
+    Nombre de like : {{ comment.liky }}
     <br /> 
-    Date de création : {{commentModel.at_created }}
+    Date de création : {{comment.at_created }}
     <br />  
-    Date de mise à jour : {{ commentModel.at_updated }}
+    Date de mise à jour : {{ comment.at_updated }}
   
     <div class="form-group">
       <input type="submit" value="Création">

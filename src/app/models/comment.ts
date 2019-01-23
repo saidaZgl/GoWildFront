@@ -1,4 +1,4 @@
-export class Comment {
+export class CommentModel {
     public id: number;
     public content: String = null;
     public liky = 0;
