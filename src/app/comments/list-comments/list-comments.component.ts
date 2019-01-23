@@ -17,7 +17,6 @@ export class ListCommentsComponent implements OnInit {
   ngOnInit() {
     this.api.getComments().subscribe((response) => {
       this.comments = response;
-      console.log(this.comments);
       this.isLoaded = true;
     });
   }

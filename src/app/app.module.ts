@@ -28,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'events', component: ListEventsComponent },
   { path: 'comment', component: CommentComponent },
+  { path: 'comments', component: ListCommentsComponent },
   { path: 'param', component: ParametersComponent },
   { path: 'events/:id', component: DetailsEventsComponent },
   { path: 'create-event', component: CreateEventComponent },
